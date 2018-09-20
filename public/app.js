@@ -14,11 +14,12 @@ $(document).on("click", "p", function () {
   $("#notes").empty();
   // Save the id from the p tag
   var thisId = $(this).attr("data-id");
-
+  console.log(this);
   // Now make an ajax call for the Article
   $.ajax({
     method: "GET",
     url: "/articles/" + thisId
+
   })
     // With that done, add the note information to the page
     .then(function (data) {
@@ -45,6 +46,10 @@ $(document).on("click", "p", function () {
       res.json(err);
     });
 });
+// $(document).on("click", "#seeNote", function () {
+//   "/articles/:id"
+
+// });
 
 // When you click the savenote button
 $(document).on("click", "#savenote", function () {
