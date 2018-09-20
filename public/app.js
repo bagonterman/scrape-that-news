@@ -39,6 +39,10 @@ $(document).on("click", "p", function () {
         // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
       }
+    })
+    .catch(function (err) {
+      // If an error occurred, send it to the client
+      res.json(err);
     });
 });
 
@@ -64,6 +68,10 @@ $(document).on("click", "#savenote", function () {
       console.log(data);
       // Empty the notes section
       $("#notes").empty();
+    })
+    .catch(function (err) {
+      // If an error occurred, send it to the client
+      res.json(err);
     });
 
   // Also, remove the values entered in the input and textarea for note entry
@@ -100,5 +108,9 @@ $(document).on("click", "#notes", function (e) {
         // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
       }
+    })
+    .catch(function (err) {
+      // If an error occurred, send it to the client
+      res.json(err);
     });
 })
